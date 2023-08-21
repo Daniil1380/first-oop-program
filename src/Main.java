@@ -6,15 +6,14 @@ public class Main {
         Car a = new Car(1, "BMW E34", "black", 0);
         Car b = new Car(2, "TESLA X", "red", 0);
 
+        //System.out.println(a.id);
+        //System.out.println(b.id);
 
-        System.out.println(a.id);
-        System.out.println(b.id);
+        //System.out.println(a.model);
+        //System.out.println(b.model);
 
-        System.out.println(a.model);
-        System.out.println(b.model);
-
-        System.out.println(a.color);
-        System.out.println(b.color);
+        //System.out.println(a.color);
+        //System.out.println(b.color);
 
         //hello();
         //abc();
@@ -30,14 +29,18 @@ public class Main {
         a.go(10);
         a.go(20);
         a.go(200);
-
-        a.currentSpeed = 50;
-        a.model = "VOLVO";
-        a.id = 777;
+        a.go(150);
 
         a.getInfo();
 
-        System.out.println(a.currentSpeed);
+        a.setColor("yellow");
+        a.getInfo();
+
+
+        System.out.println("--------------");
+        System.out.println(a.getColor());
+        System.out.println("--------------");
+
 
     }
 

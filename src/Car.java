@@ -1,11 +1,11 @@
 public class Car {
 
-    int id;
-    String model;
+    private int id;
+    private String model;
 
-    String color;
+    private String color;
 
-    int currentSpeed;
+    private int currentSpeed;
 
     public Car(int id, String model, String color, int currentSpeed) {
         this.id = id;
@@ -36,4 +36,13 @@ public class Car {
         }
         currentSpeed = speed;
     }
+
+    public void setColor(String a) { //запись, set - установить
+        color = a;
+    }
+
+    public String getColor() { //чтение, get - получить
+        return color;
+    }
+
 }
