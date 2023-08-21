@@ -29,7 +29,13 @@ public class Main {
 
         a.go(10);
         a.go(20);
-        a.go(30);
+        a.go(200);
+
+        a.currentSpeed = 50;
+        a.model = "VOLVO";
+        a.id = 777;
+
+        a.getInfo();
 
         System.out.println(a.currentSpeed);
 
