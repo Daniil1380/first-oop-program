@@ -1,9 +1,11 @@
-package somewhere;
+package car;
+
+import java.util.Objects;
 
 public class Car {
 
-    private int id;
-    private String model;
+    private final int id;
+    private final String model;
     private String color;
     private int currentSpeed;
 
@@ -97,4 +99,17 @@ public class Car {
     public void changeCost(int sale) {
         cost = cost - cost * sale / 100;
     }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (model != null ? model.hashCode() : 0);
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + currentSpeed;
+        result = 31 * result + cost;
+        return result;
+    }
+
+    //override
+
 }
