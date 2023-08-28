@@ -11,6 +11,6 @@ public class Cabriolet extends Car {
 
     @Override
     public void drift() {
-        System.out.println("Кабриолет не для дрифта, грязь залетела в через открытое окно...");
+        System.out.println("Кабриолет не для дрифта, грязь залетела через открытое окно...");
     }
 }

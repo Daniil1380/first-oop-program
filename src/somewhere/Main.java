@@ -1,6 +1,5 @@
 package somewhere;
 
-import car.ABC;
 import car.Cabriolet;
 import car.Car;
 
@@ -8,13 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         //Car a = new Car(1, "BMW E34", "black", 0);
-        Car b = new Car(2, "TESLA X", "red", 0);
+        //Car b = new Car(2, "TESLA X", "red", 0);
 
         //b.color = "red";
 
-        b.setColor("red");
+        //b.setColor("red");
 
-        String color = b.getColor();
+        //String color = b.getColor();
 
 
         //System.out.println(a.id);
@@ -88,20 +87,20 @@ public class Main {
         //System.out.println(daniil);
 //
 
-        Car car = new Car(1, "BMW E34", "black", 0);
-        Car car1 = new Car(1, "BMW E34", "black", 0);
+        //Car car = new Car(1, "BMW E34", "black", 0);
+        //Car car1 = new Car(1, "BMW E34", "black", 0);
         Cabriolet cabriolet = new Cabriolet(1, "tel ran", "moon", 0, true);
 
-        car.drift();
+        //car.drift();
         cabriolet.drift();
         cabriolet.isOpened = true;
         cabriolet.isOpened = false;
 
         Object object = new Object();
 
-        System.out.println(car.hashCode());
-        System.out.println(car.hashCode());
-        System.out.println(car1.hashCode());
+        //System.out.println(car.hashCode());
+        //System.out.println(car.hashCode());
+        //System.out.println(car1.hashCode());
         System.out.println(cabriolet.hashCode());
 
         System.out.println("----------");

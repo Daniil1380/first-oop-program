@@ -2,7 +2,7 @@ package car;
 
 import java.util.Objects;
 
-public class Car {
+public abstract class Car {
 
     private final int id;
     private final String model;
@@ -18,9 +18,17 @@ public class Car {
         this.currentSpeed = currentSpeed;
     }
 
-    public void drift() {
-        System.out.println("Супер-крутой дрифт...");
+    public Car(int id, String model) {
+        this.id = id;
+        this.model = model;
     }
+
+    public Car() {
+        id = 0;
+        model = "";
+    }
+
+    public abstract void drift();
 
     public void getInfo() {
         System.out.println();
@@ -82,6 +90,8 @@ public class Car {
         System.out.println("Проверить электронику");
     }
 
+    //сигнатура = название метода + все параметры
+
     private void startAfterCheck() {
         System.out.println("Запуск электроники");
         System.out.println("Запуск стартера");
@@ -96,8 +106,13 @@ public class Car {
         this.cost = cost;
     }
 
-    public void changeCost(int sale) {
+    public void changeCost(int sale) { //15 = 15%
         cost = cost - cost * sale / 100;
+    }
+
+    public void changeCost(double sale) { //0.15 = 15%
+        double answer = cost - cost * sale;
+        cost = (int) answer;
     }
 
     @Override
@@ -110,6 +125,31 @@ public class Car {
         return result;
     }
 
-    //override
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Car car = (Car) o;
+
+        if (id != car.id) return false;
+        if (currentSpeed != car.currentSpeed) return false;
+        if (cost != car.cost) return false;
+        if (!Objects.equals(model, car.model)) return false;
+        return Objects.equals(color, car.color);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", currentSpeed=" + currentSpeed +
+                ", cost=" + cost +
+                '}';
+    }
+
+    //перегрузка
+    //overloading
 }
