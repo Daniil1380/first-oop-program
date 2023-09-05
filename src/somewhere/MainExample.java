@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class MainExample {
 
     public static void main(String[] args) {
+
         //Scanner scanner = new Jeep();
         //Car car = new Car();
         Car a = new Jeep();

@@ -15,6 +15,7 @@ public class Jeep extends Car implements Refuelable {
 
     @Override
     public void refuel() {
+        setFuel(100);
         System.out.println("Джип заправили дизельным топливом");
     }
 

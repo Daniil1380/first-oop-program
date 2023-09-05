@@ -11,6 +11,15 @@ public abstract class Car {
 
     private int cost;
 
+    private int fuel;
+
+    private TransmissionType type;
+
+    //механические
+    //автомат
+    //искусственный интеллект
+
+
     public Car(int id, String model, String color, int currentSpeed) {
         this.id = id;
         this.model = model;
@@ -47,6 +56,22 @@ public abstract class Car {
             System.out.println("Машина продолжает движение со скоростью " + speed);
         }
         currentSpeed = speed;
+    }
+
+    public TransmissionType getType() {
+        return type;
+    }
+
+    public void setType(TransmissionType type) {
+        this.type = type;
+    }
+
+    public int getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(int fuel) {
+        this.fuel = fuel;
     }
 
     public void setColor(String color) { //запись, set - установить
@@ -103,7 +128,12 @@ public abstract class Car {
     }
 
     public void setCost(int cost) {
-        this.cost = cost;
+        if (type != null) {
+            this.cost = (int) (cost * type.getCoefficientOfCost());
+        }
+        else {
+            this.cost = cost;
+        }
     }
 
     public void changeCost(int sale) { //15 = 15%
