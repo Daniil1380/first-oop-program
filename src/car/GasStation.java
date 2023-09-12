@@ -19,7 +19,6 @@ public class GasStation {
 
         System.out.println("Сейчас очередь из автомобилей составляет " + cabriolets.size());
         System.out.println("Вот эти машины " + cabriolets);
-
     }
 
     public ArrayList<Cabriolet> getCabriolets() {
