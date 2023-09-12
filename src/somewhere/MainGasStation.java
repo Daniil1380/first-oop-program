@@ -19,7 +19,6 @@ public class MainGasStation {
         gasStation.refuel(airplane);
         gasStation.refuel(ship);
 
-        jeep.setType(TransmissionType.MECHANIC);
         cabriolet.setType(TransmissionType.AUTO);
 
         TransmissionType jeepType = jeep.getType();
@@ -29,13 +28,17 @@ public class MainGasStation {
         System.out.println(cabrioletType);
 
         System.out.println(jeepType == cabrioletType);
-        System.out.println(jeepType.equals(cabrioletType));
 
         jeep.setCost(100_000);
         cabriolet.setCost(100_000);
 
         System.out.println(jeep.getCost());
         System.out.println(cabriolet.getCost());
+
+        //System.out.println(jeep.getType().isNotAI());
+
+        jeep.go(60);
+        cabriolet.go(60);
 
 
 

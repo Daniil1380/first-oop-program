@@ -49,13 +49,24 @@ public abstract class Car {
     }
 
     public void go(int speed) {
-        if (currentSpeed == 0) {
-            System.out.println("Машина начала движение со скоростью " + speed);
-        }
-        else {
-            System.out.println("Машина продолжает движение со скоростью " + speed);
-        }
         currentSpeed = speed;
+
+
+        if (type == null) {
+            return;
+        }
+
+        switch (type) {
+            case MECHANIC:
+                System.out.println("Немного заглохли, но поехали");
+                break;
+            case AUTO:
+                System.out.println("Отлично поехали");
+                break;
+            case AI:
+                System.out.println("Я даже отпустил руль");
+                break;
+        }
     }
 
     public TransmissionType getType() {

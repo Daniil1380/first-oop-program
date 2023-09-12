@@ -15,4 +15,16 @@ public enum TransmissionType {
     public double getCoefficientOfCost() {
         return coefficientOfCost;
     }
+
+    public boolean isNotAI() {
+        return !this.equals(AI);
+    }
+
+    public boolean isAutoOrMechanic() {
+        return this.equals(AUTO) || this.equals(MECHANIC);
+    }
+
+    public boolean isAuto() {
+        return this.equals(AUTO);
+    }
 }
