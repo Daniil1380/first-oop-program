@@ -1,10 +1,11 @@
 package car;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GasStation {
 
-    private ArrayList<Cabriolet> cabriolets;
+    private List<Cabriolet> cabriolets;
 
     public void refuel(Refuelable a) {
         System.out.println("К зарправке подъехал " + a.toString());
@@ -21,11 +22,23 @@ public class GasStation {
         System.out.println("Вот эти машины " + cabriolets);
     }
 
-    public ArrayList<Cabriolet> getCabriolets() {
+    public void refuelAll() {
+        if (cabriolets == null || cabriolets.size() == 0) {
+            return;
+        }
+
+        for (Cabriolet cabriolet : cabriolets) {
+            cabriolet.refuel();
+        } //foreach
+
+        cabriolets.clear();
+    }
+
+    public List<Cabriolet> getCabriolets() {
         return cabriolets;
     }
 
-    public void setCabriolets(ArrayList<Cabriolet> cabriolets) {
+    public void setCabriolets(List<Cabriolet> cabriolets) {
         this.cabriolets = cabriolets;
     }
 }
