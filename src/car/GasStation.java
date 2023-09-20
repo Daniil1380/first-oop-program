@@ -1,11 +1,12 @@
 package car;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class GasStation {
 
     private List<Cabriolet> cabriolets;
+    private Set<EngineType> availableEngineTypes;
 
     public void refuel(Refuelable a) {
         System.out.println("К зарправке подъехал " + a.toString());
@@ -28,8 +29,12 @@ public class GasStation {
         }
 
         for (Cabriolet cabriolet : cabriolets) {
-            cabriolet.refuel();
-        } //foreach
+            if (cabriolet.getEngineType() != null
+                    && availableEngineTypes != null
+                    && availableEngineTypes.contains(cabriolet.getEngineType())) {
+                cabriolet.refuel();
+            }
+        }
 
         cabriolets.clear();
     }
@@ -40,5 +45,13 @@ public class GasStation {
 
     public void setCabriolets(List<Cabriolet> cabriolets) {
         this.cabriolets = cabriolets;
+    }
+
+    public Set<EngineType> getAvailableEngineTypes() {
+        return availableEngineTypes;
+    }
+
+    public void setAvailableEngineTypes(Set<EngineType> availableEngineTypes) {
+        this.availableEngineTypes = availableEngineTypes;
     }
 }
