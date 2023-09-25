@@ -1,6 +1,8 @@
 package car;
 
-public class Cabriolet extends Car implements Refuelable {
+import java.util.Comparator;
+
+public class Cabriolet extends Car implements Refuelable, Comparable<Cabriolet> {
 
     public boolean isOpened;
 
@@ -28,4 +30,29 @@ public class Cabriolet extends Car implements Refuelable {
     public void setEngineType(EngineType engineType) {
         this.engineType = engineType;
     }
+
+    @Override
+    public int compareTo(Cabriolet o) {
+        String model = getModel();
+        String anotherModel = o.getModel();
+
+        if (model == null) {
+            return -1;
+        }
+
+        if (anotherModel == null) {
+            return 1;
+        }
+
+        if (model.length() > anotherModel.length()) {
+            return 1;
+        }
+
+        if (model.length() < anotherModel.length()) {
+            return -1;
+        }
+
+        return model.compareTo(anotherModel);
+    }
+
 }

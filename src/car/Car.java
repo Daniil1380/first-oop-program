@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class Car {
 
-    public int id;
+    private int id;
     private final String model;
     private String color;
     private int currentSpeed;

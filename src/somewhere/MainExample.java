@@ -52,10 +52,10 @@ public class MainExample {
         Jeep landcruiser = new Jeep();
         Jeep landcruiserSecond = new Jeep();
 
-        landcruiser.id = 1;
-        landcruiserSecond.id = 2;
-        System.out.println(landcruiser.id);
-        System.out.println(landcruiserSecond.id);
+        //landcruiser.id = 1;
+        //landcruiserSecond.id = 2;
+        //System.out.println(landcruiser.id);
+        //System.out.println(landcruiserSecond.id);
 
 
         System.out.println(Jeep.MAX_SPEED);
